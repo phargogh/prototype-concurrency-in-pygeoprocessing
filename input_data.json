@@ -1,0 +1,7 @@
+{
+        "data": [
+                "https://storage.googleapis.com/gef-ckan-public-data/awc-isric-soilgrids/awc.tif",
+                "https://storage.googleapis.com/gef-ckan-public-data/k-factor-isric-soilgrids/renard-k-factor.tif",
+                "https://storage.googleapis.com/gef-ckan-public-data/srtm-v3-1s/srtm-v3-1s.tif"
+        ]
+}
