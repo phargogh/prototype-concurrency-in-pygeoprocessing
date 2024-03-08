@@ -1,7 +1,12 @@
 {
         "data": [
                 "https://storage.googleapis.com/gef-ckan-public-data/awc-isric-soilgrids/awc.tif",
-                "https://storage.googleapis.com/gef-ckan-public-data/k-factor-isric-soilgrids/renard-k-factor.tif",
-                "https://storage.googleapis.com/gef-ckan-public-data/srtm-v3-1s/srtm-v3-1s.tif"
+                "https://storage.googleapis.com/gef-ckan-public-data/k-factor-isric-soilgrids/renard-k-factor.tif"
+        ],
+        "bbox_bay_area": [
+            -123.836, -120.475, 36.706, 38.717
+        ],
+        "bbox_stanford": [
+            -122.2612, -122.1269, 37.3723, 37.4574
         ]
 }
