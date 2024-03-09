@@ -1,9 +1,11 @@
 import json
+import os
 
+import pygeoprocessing
 from dask_jobqueue import SLURMCluster
 
 
-def main()
+def main():
     # Defaults can be written to ~/.config/dask/jobqueue.yml
     # System-wide defaults can also live at /etc/dask/jobqueue.yml
     cluster = SLURMCluster(
@@ -20,7 +22,7 @@ def main()
 
     client = Client(cluster)
 
-    print(cluster.job_script())  # shows how slurm launches a single dask worker
+    print(cluster.job_script())  # slurm launches a individual dask workers
 
     # use ssh port forwarding to access the dask dashboard
     # ssh -N -L 8787:<login node hostname> -L 8888:<login note hostname>:8888 login@<login address of cluster>
