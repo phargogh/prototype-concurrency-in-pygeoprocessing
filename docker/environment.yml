@@ -1,0 +1,16 @@
+name: base
+channels:
+    - conda-forge
+dependencies:
+    - dask-jobqueue
+    - python=3.10
+    - natcap.invest==3.13.0
+    - gdal
+    - pygeoprocessing
+    - pandas
+    - taskgraph
+    - matplotlib
+    - cxx-compiler
+    - jupyter
+    - requests
+    - make
