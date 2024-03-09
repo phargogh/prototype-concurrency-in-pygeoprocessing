@@ -7,7 +7,7 @@ def main()
     # Defaults can be written to ~/.config/dask/jobqueue.yml
     # System-wide defaults can also live at /etc/dask/jobqueue.yml
     cluster = SLURMCluster(
-        cores=1, memory="4GB", queue="normal,hns",
+        cores=1, memory="4GB", queue="normal,hns", walltime="00:10:00",
         job_script_prologue=[
             'export GDAL_CACHEMAX=2048',
         ],
