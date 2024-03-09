@@ -26,7 +26,7 @@ defaults:
 env:
     # Customize this name if needed.
     # The repo name is a very reasonable default!
-    CONTAINER_NAME: devstack
+    CONTAINER_NAME: prototype-concurrency-in-pygeoprocessing
 
 jobs:
     build:
