@@ -29,6 +29,9 @@ def main():
     # then go to localhost:8787/status to see the hosted dashboard
 
     workspace = 'workspace_dir_dask'
+    if not os.path.exists(workspace):
+        os.makedirs(workspace)
+
     with open('input_data.json') as input_json:
         data = json.load(input_json)
         data_files = data['data']
