@@ -1,8 +1,39 @@
+"""Demonstrate multi-machine warping.
+
+To execute:
+    * Log into sherlock
+    * Install mamba
+    * Create an environment with dependencies:
+        $ mamba create -p $SCRATCH/daskenv-310 -y python=3.10 pygeoprocessing
+        $ mamba activate $SCRATCH/daskenv-310
+        $ python -m pip install -r requirements.txt
+    * run `sh_dev` to enter an interactive session
+    * $ mamba activate $SCRATCH/daskenv-310
+    * $ python example-sherlock.py
+
+During execution, you can see that dask workers have spun up with
+`squeue -u <username>`, and you can SSH into the node to see that the job is
+indeed working.  The workspace will write to the CWD.
+
+Future work with dask could include:
+    * reporting progress bars with dask's progress utilities
+    * being able to run this program from within a singularity container (the
+      only way I've been able to get this to work so far has been within a
+      mamba/conda environment, not within Singularity containers because of the
+      lack of slurm CLI tools ... see
+      https://github.com/ExaESM-WP4/Batch-scheduler-Singularity-bindings for a
+      possible approach to setting up shims).
+    * integrating further with the dask ecosystem to support parallelism across
+      more parts of pygeoprocessing.
+"""
 import json
+import logging
 import os
 
 import pygeoprocessing
 from dask_jobqueue import SLURMCluster
+
+logging.basicConfig(level=logging.DEBUG)
 
 
 def main():
