@@ -18,6 +18,18 @@ def main():
         data_files = data['data']
         bbox = data['bbox_stanford']
 
+    # NOTE: This is a relatively simple example because:
+    #   * All our input rasters are in the same projection
+    #   * We know the target bounding box in advance
+    #   * We aren't masking by another spatial layer
+    #
+    # If any of these conditions differed, we would need to build out the graph
+    # to explicitly handle all of these cases that
+    # `align_and_resize_raster_stack` just does for us for basically free.
+    # Some of these calculations can be done without tasks (like warping a
+    # bounding box), but others are best done with tasks (like creating a mask
+    # raster and rasterizing a vector onto the new raster)
+
     graph = taskgraph.TaskGraph(os.path.join(workspace, '.taskgraph'),
                                 n_workers=len(data_files))
 
